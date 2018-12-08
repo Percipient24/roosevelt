@@ -6,8 +6,21 @@ module.exports = function fakeParams () {
     verbose: false
   }
   return {
+    base: function () {
+      return {
+        generateFolderStructure: true,
+        logging: defaultLogging,
+        js: {
+          bundler: {
+            bundles: [],
+            expose: {}
+          }
+        }
+      }
+    },
     emptyJsBundle: function () {
       return {
+        generateFolderStructure: true,
         logging: defaultLogging,
         js: {
           bundler: {
@@ -19,6 +32,7 @@ module.exports = function fakeParams () {
     },
     multiJsBundle: function () {
       return {
+        generateFolderStructure: true,
         logging: defaultLogging,
         js: {
           bundler: {
